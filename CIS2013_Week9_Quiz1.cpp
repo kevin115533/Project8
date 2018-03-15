@@ -18,12 +18,11 @@ int main() {
 		cout << "Failed to open file" << endl;
 	}
 
-	for (int i = 0; i <= 200; i++) {
-		inn >> item;
+	while(inn>>item) {
 		if (item == 'A') { upA++; }
-		if (item == 'F') { upA++; }
-		if (item == 'a') { upA++; }
-		if (item == 'b') { upA++; }
+		else if (item == 'F') { upF++; }
+		else if (item == 'a') { lowA++; }
+		else if (item == 'b') { lowB++; }
 		total++;
 	}
 
@@ -32,7 +31,7 @@ int main() {
 	cout << "Total F's: " << upF << endl;
 	cout << "Total a's: " << lowA << endl;
 	cout << "Total b's: " << lowB << endl;
-	cout << "All total characters: " << endl;
+	cout << "All total characters: " << total << endl;
 
 	inn.close();
 	cin >> stay;
